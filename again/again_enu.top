@@ -1,0 +1,11 @@
+topic: ~again()
+language: enu
+
+concept:(yes) [yes yeah "of course" sure okay]
+concept:(no) [no nope "not really" "no thanks"]
+
+u:(e:onStart) you want play again?
+    u1:(~yes) Great! $yes=1
+    u1:(~no) Okay, maybe next time,goodbye. $onStopped=1
+
+

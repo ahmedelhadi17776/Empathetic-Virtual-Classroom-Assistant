@@ -1,0 +1,49 @@
+topic: ~maths_quiz()
+language: enu
+
+
+concept:(yes) [yes yeah "of course" sure okay]
+concept:(no) [no nope "not really" "no thanks"]
+concept:(result) [result score "tell me the score" "tell me my score"]
+
+u:(e:onStart) $a1=0 $a2=0 $a3=0 $a4=0 $a5=0 $quizStarted=1 Ready to start the maths quiz?
+
+u:(~yes) Great! Let's begin. $playAGame=1
+^gotoReactivate(firstQuestion)
+
+u:(~no) Okay, maybe another time. Let me know when you're ready! $onStopped=1
+
+u:(e:Dialog/NotUnderstood) I didn't understand that. Could you please repeat?
+
+proposal: %firstQuestion First question: What is 3 times 7?
+u1:(21) Correct! That's right. Let's move on. $a1=1
+^gotoReactivate(secondQuestion)
+u1:(*) I'm sorry, that's not correct. The right answer is 21. Let's continue. $a1=0
+^gotoReactivate(secondQuestion)
+
+proposal: %secondQuestion Second question: What is 8 plus 5?
+u1:(13) Correct! You're doing well. Next question coming up. $a2=1
+^gotoReactivate(thirdQuestion)
+u1:(*) That's incorrect. The correct answer is 13. Let's keep going. $a2=0
+^gotoReactivate(thirdQuestion)
+
+proposal: %thirdQuestion Third question: What is 9 times 4?
+u1:(36) Nice! That's correct. On to the next one. $a3=1
+^gotoReactivate(fourthQuestion)
+u1:(*) That's not right. The answer is 36. Moving on. $a3=0
+^gotoReactivate(fourthQuestion)
+
+proposal: %fourthQuestion Fourth question: What is 15 minus 7?
+u1:(8) Well done! You got it right. Last question coming up. $a4=1
+^gotoReactivate(finalQuestion)
+u1:(*) That's wrong. The correct answer is 8. One more to go. $a4=0
+^gotoReactivate(finalQuestion)
+
+proposal: %finalQuestion Final question: What is 6 divided by 2?
+u1:(3) Excellent! That's correct. Let's wrap up the quiz. $a5=1
+^gotoReactivate(calculateScore) $onStopped=1
+u1:(*) Sorry, that's incorrect. The answer is 3. Let's wrap up the quiz. $a5=0
+^gotoReactivate(calculateScore) $onStopped=1
+
+
+

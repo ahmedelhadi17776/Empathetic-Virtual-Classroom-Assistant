@@ -1,0 +1,10 @@
+topic: ~choose()
+language: enu
+
+u:(e:onStart) Hi, how can i help you?
+    u1:(attendance) Ok, please wait $attendance=1
+    u1:(quiz) $quiz=1 get ready for challenging, wait 5 seconds and choose type of quiz maths, history, physics 
+    u1:(close) ok, goodbye $onStopped=1
+    u1:(calc) ok let's do some calculations $calc=1
+
+    

@@ -1,0 +1,8 @@
+topic: ~continue()
+language: enu
+
+concept:(yes) [yes yeah "of course" sure okay]
+concept:(no) [no nope "not really" "no thanks"]
+
+u:(~yes) $yes=1
+u:(~no) ok, goodbye $onStopped=1

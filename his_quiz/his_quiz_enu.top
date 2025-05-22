@@ -1,0 +1,45 @@
+topic: ~his_quiz()
+language: enu
+
+concept:(yes) [yes yeah "of course" sure okay]
+concept:(no) [no nope "not really" "no thanks"]
+concept:(result) [result score "tell me the score" "tell me my score"]
+
+u:(e:onStart) $a1=0 $a2=0 $a3=0 $a4=0 $a5=0 $quizStarted=1 Ready to start the Egyptian history quiz?
+
+u:(~yes) Great! Let's begin. $playAGame=1
+^gotoReactivate(firstQuestion)
+
+u:(~no) Okay, maybe another time. Let me know when you're ready! $onStopped=1
+
+u:(e:Dialog/NotUnderstood) I didn't understand that. Could you please repeat?
+
+proposal: %firstQuestion First question: In which year did Egypt gain independence from British rule?
+u1:(1922) Correct! That's right. Let's move on. $a1=1
+^gotoReactivate(secondQuestion)
+u1:(*) I'm sorry, that's not correct. The right answer is 1922. Let's continue. $a1=0
+^gotoReactivate(secondQuestion)
+
+proposal: %secondQuestion Second question: Who was the leader of the 1952 Egyptian Revolution?
+u1:([Gamal "Gamal Abdel" "Gamal Abdel Nasser"]) Correct! You're doing well. Next question coming up. $a2=1
+^gotoReactivate(thirdQuestion)
+u1:(*) That's incorrect. The correct answer is Gamal Abdel Nasser. Let's keep going. $a2=0
+^gotoReactivate(thirdQuestion)
+
+proposal: %thirdQuestion Third question: In which year was the Aswan High Dam completed?
+u1:(1970) Nice! That's correct. On to the next one. $a3=1
+^gotoReactivate(fourthQuestion)
+u1:(*) That's not right. The answer is 1970. Moving on. $a3=0
+^gotoReactivate(fourthQuestion)
+
+proposal: %fourthQuestion Fourth question: Who was the Egyptian president assassinated in 1981?
+u1:([Anwar "Anwar Sadat" "Anwar el-Sadat"]) Well done! You got it right. Last question coming up. $a4=1
+^gotoReactivate(finalQuestion)
+u1:(*) That's wrong. The correct answer is Anwar Sadat. One more to go. $a4=0
+^gotoReactivate(finalQuestion)
+
+proposal: %finalQuestion Final question: In which year did the Egyptian Revolution, part of the Arab Spring, begin?
+u1:(2011) Excellent! That's correct. Let's wrap up the quiz. $a5=1
+^gotoReactivate(calculateScore) $onStopped=1
+u1:(*) Sorry, that's incorrect. The answer is 2011. Let's wrap up the quiz. $a5=0
+^gotoReactivate(calculateScore) $onStopped=1
