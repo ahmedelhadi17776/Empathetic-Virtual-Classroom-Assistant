@@ -1,7 +1,6 @@
 # Empathetic Virtual Classroom Assistant
 **Integrating Emotional AI in Education**
 
-![NAO6 Robot](https://user-images.githubusercontent.com/your-repo/nao6-demo.png)
 
 ## Table of Contents
 - [Overview](#overview)
