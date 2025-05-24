@@ -1,7 +1,7 @@
 # Empathetic Virtual Classroom Assistant
 **Integrating Emotional AI in Education**
 
-
+ 
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
