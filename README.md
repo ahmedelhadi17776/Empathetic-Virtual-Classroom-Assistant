@@ -106,13 +106,6 @@ The Empathetic Virtual Classroom Assistant (VCA) is an AI-powered system built o
 - **Scalability**: Support multi-student simultaneous interactions and group sessions.
 - **Mobile App**: Extend interaction via tablets or smartphones.
 
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -m 'Add YourFeature'`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a Pull Request
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
