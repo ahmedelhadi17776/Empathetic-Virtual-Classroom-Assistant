@@ -107,6 +107,7 @@ The Empathetic Virtual Classroom Assistant (VCA) is an AI-powered system built o
 - **Mobile App**: Extend interaction via tablets or smartphones.
 
 
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
